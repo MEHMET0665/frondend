@@ -43,7 +43,7 @@ class Form extends React.Component {
             type="text"
             name="name"
             id="name"
-            value={name}
+            defaultValue={name}
             onChange={this.handleChange}
           />
           <label htmlFor="email">Email</label>
@@ -51,7 +51,7 @@ class Form extends React.Component {
             type="text"
             name="email"
             id="email"
-            value={email}
+            defaultValue={email}
             onChange={this.handleChange}
           />
           <label htmlFor="phone">Phone</label>
@@ -59,8 +59,8 @@ class Form extends React.Component {
             type="tel"
             name="phone"
             id="phone"
-            value={phone}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            defaultValue={phone}
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
             onChange={this.handleChange}
           />
           <small>Format: 123-456-7890</small>
@@ -69,7 +69,7 @@ class Form extends React.Component {
             type="text"
             name="city"
             id="city"
-            value={city}
+            defaultValuealue={city}
             onChange={this.handleChange}
           />
           <button type="submit">Submit</button>

@@ -7,12 +7,23 @@ class Details extends React.Component {
     this.state = {
       name: "",
       email: "",
+      phone:"",
       city: "",
       isActive: true,
     };
     this.initialState = this.state;
   }
-
+  componentDidMount(){
+    const { name, email, city, phone } = this.props.currentUser;
+    this.setState({
+      name: name,
+      email: email,
+      city: city,
+      phone:phone,
+      isActive: true,
+    });
+  }
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -26,6 +37,7 @@ class Details extends React.Component {
     console.log(this.state);
     this.props.updateCustomer(this.state, id);
     this.setState(this.initialState);
+    window.location='/'
   };
 
   render() {
@@ -56,8 +68,8 @@ class Details extends React.Component {
             type="tel"
             name="phone"
             id="phone"
-            value={phone}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            defaultValue={phone}
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
             onChange={this.handleChange}
           />
           <small>Format: 123-456-7890</small>
